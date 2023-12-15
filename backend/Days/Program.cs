@@ -12,6 +12,7 @@ builder.ConfigureDatabase();
 builder.ConfigureServices();
 builder.ConfigureMediator();
 builder.ConfigureCors();
+builder.ConfigureAuthentification();
 
 builder.Services
     .AddControllers()
@@ -23,8 +24,6 @@ builder.Services
 
 var app = builder.Build();
 
-app.UseCors();
-
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger(); 
@@ -35,10 +34,13 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UseCors();
 
 app.MapControllers();
 app.UseHttpsRedirection();
 app.UseMiddleware<ValidationExceptionMiddleware>();
+app.UseAuthentication();
+app.UseAuthorization();
 
 using (var scope = app.Services.CreateScope())
 {

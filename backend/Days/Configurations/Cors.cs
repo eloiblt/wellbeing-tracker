@@ -9,7 +9,7 @@ public static partial class Configuration
             options.AddDefaultPolicy(
                 policy  =>
                 {
-                    policy.WithOrigins(builder.Configuration["CorsOrigin"]!);
+                    policy.AllowAnyHeader().WithOrigins(builder.Configuration["CorsOrigin"]!);
                 });
         });
     }

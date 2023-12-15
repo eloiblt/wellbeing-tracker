@@ -4,7 +4,6 @@ export default class ApiClient {
   client: Axios;
 
   constructor(url: string) {
-    console.log(url);
     this.client = Axios.create({
       baseURL: url,
       headers: {
@@ -15,7 +14,10 @@ export default class ApiClient {
   }
 
   getUserById() {
-    console.log();
     return this.client.get('/user/1');
+  }
+
+  login(data: { email: string; password: string }) {
+    return this.client.post<string>('/user/login', data);
   }
 }

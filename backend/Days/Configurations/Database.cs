@@ -8,16 +8,20 @@ public static partial class Configuration
 {
     public static void ConfigureDatabase(this WebApplicationBuilder builder)
     {
-        var connBuilder = new NpgsqlConnectionStringBuilder(builder.Configuration.GetConnectionString("DefaultConnection"));
+        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
+        var connBuilder = new NpgsqlConnectionStringBuilder(connectionString);
 
-        if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DB_PASSWORD")))
+        if (!connectionString.Contains("Password"))
         {
-            connBuilder.Password = Environment.GetEnvironmentVariable("DB_PASSWORD");
-        }
+            if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DB_PASSWORD")))
+            {
+                connBuilder.Password = Environment.GetEnvironmentVariable("DB_PASSWORD");
+            }
 
-        if (string.IsNullOrEmpty(connBuilder.Password))
-        {
-            throw new Exception("Could not find a database password");
+            if (string.IsNullOrEmpty(connBuilder.Password))
+            {
+                throw new Exception("Could not find a database password");
+            }
         }
 
         builder.Services.AddDbContext<DaysContext>(options =>

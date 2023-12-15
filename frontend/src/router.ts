@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 import Home from './components/Home.vue';
+import Login from './components/Login.vue';
+import Metrics from './components/Metrics.vue';
 
 export function routes() {
   const routes = [
@@ -7,6 +9,21 @@ export function routes() {
       path: '/',
       name: 'Home',
       component: Home,
+    } satisfies RouteRecordRaw,
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login,
+    } satisfies RouteRecordRaw,
+    {
+      path: '/metrics',
+      name: 'Metrics',
+      component: Metrics,
+    } satisfies RouteRecordRaw,
+    {
+      path: '/:catchAll(.*)*',
+      name: 'PageNotFound',
+      redirect: '/',
     } satisfies RouteRecordRaw,
   ];
 

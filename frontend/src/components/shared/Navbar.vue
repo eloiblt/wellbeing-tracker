@@ -1,24 +1,46 @@
 <script setup lang="ts">
 import LanguageSelector from './LanguageSelector.vue';
-import { inject, onMounted, ref } from 'vue';
-import type Keycloak from 'keycloak-js/dist/keycloak.js';
 import { useI18n } from 'vue-i18n';
 import ToggleSwitch from './ToggleSwitch.vue';
+import { inject, onMounted, ref } from 'vue';
+import type AuthService from '../../services/auth.service.ts';
 
-const keycloak = inject<Keycloak>('keycloak') as Keycloak;
 const { t } = useI18n();
+const authService = inject<AuthService>('authService') as AuthService;
+const isLoggedIn = ref<boolean>(false);
+const emit = defineEmits(['toggle-menu']);
 
-const env = ref<string>(import.meta.env.VITE_ENVIRONMENT);
-const isAdmin = ref<boolean>(false);
+const props = defineProps({
+  menuOpen: {
+    type: Boolean,
+    default: false,
+  },
+});
 
 onMounted(() => {
-  if (!keycloak?.resourceAccess) return;
-  isAdmin.value = keycloak.resourceAccess.nrt?.roles.includes('NRT-Admin') ?? false;
+  authService.loggedSubject.subscribe(v => (isLoggedIn.value = v));
 });
+
+function menuOpenToggle() {
+  emit('toggle-menu');
+}
 </script>
 
 <template>
   <nav class="navbar">
+    <div class="menu-icon">
+      <Transition name="fade">
+        <button v-if="!props.menuOpen" type="button" class="btn-no-style" @click="menuOpenToggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </Transition>
+      <Transition name="fade">
+        <button v-if="props.menuOpen" type="button" class="btn-no-style" @click="menuOpenToggle">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </Transition>
+    </div>
+
     <router-link to="/">
       <img alt="" class="logo" src="../../assets/clock.png" />
     </router-link>
@@ -34,11 +56,15 @@ onMounted(() => {
 
     <ul class="navbar-actions">
       <li class="nav-item">
-        <ToggleSwitch></ToggleSwitch>
+        <ToggleSwitch />
       </li>
 
-      <li class="nav-item language-selector">
+      <li class="nav-item">
         <LanguageSelector />
+      </li>
+
+      <li v-if="isLoggedIn" class="nav-item" title="'logout'" @click="authService.logout()">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
       </li>
     </ul>
   </nav>
@@ -50,10 +76,28 @@ onMounted(() => {
   display: flex;
   align-items: center;
   padding: 12px 30px;
+  caret-color: transparent;
+  filter: drop-shadow(0px 5px 5px var(--drop-shadow));
+  z-index: 1;
+
+  .menu-icon {
+    position: relative;
+    padding-right: 20px;
+    width: 30px;
+    height: 30px;
+
+    button {
+      margin-right: 20px;
+      font-size: 20px;
+      color: var(--text-tertiary);
+      position: absolute;
+      inset: 0;
+    }
+  }
 
   .logo {
     cursor: pointer;
-    width: 50px;
+    width: 30px;
   }
 
   .app-name-container {
@@ -105,12 +149,17 @@ onMounted(() => {
           margin-left: 5px;
         }
       }
-
-      &.language-selector {
-        position: relative;
-        cursor: default;
-      }
     }
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

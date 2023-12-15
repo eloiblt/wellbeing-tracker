@@ -1,5 +1,4 @@
-﻿using System.Collections.Specialized;
-using Infrastructure.Entities;
+﻿using Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -13,6 +12,7 @@ public abstract class DaysContextSeed
         {
             await context.Database.MigrateAsync();
             await SeedUsers(context, logger);
+            await SeedMetricsType(context, logger);
         }
         catch (Exception ex)
         {
@@ -24,18 +24,31 @@ public abstract class DaysContextSeed
 
     private static async Task SeedUsers(DaysContext context, ILogger logger)
     {
-        if (await context.Users.AnyAsync())
-        {
-            return;
-        }
+        if (await context.Users.AnyAsync()) return;
 
         var users = new List<User>
         {
-            new() { FirstName = "Eloi", LastName = "Bellet", Email = "eloi.bellet@gmail.com" },
+            new() { FirstName = "Eloi", LastName = "Bellet", Email = "eloi.bellet@gmail.com" }
         };
 
         await context.Users.AddRangeAsync(users);
         await context.SaveChangesAsync();
         logger.LogInformation("Users seeded");
+    }
+    
+    private static async Task SeedMetricsType(DaysContext context, ILogger logger)
+    {
+        if (await context.MetricTypes.AnyAsync()) return;
+
+        var metricTypes = new List<MetricType>
+        {
+            new() { Name = "Since" },
+            new() { Name = "Until"  },
+            new() { Name = "Between"  }
+        };
+
+        await context.MetricTypes.AddRangeAsync(metricTypes);
+        await context.SaveChangesAsync();
+        logger.LogInformation("MetricTypes seeded");
     }
 }

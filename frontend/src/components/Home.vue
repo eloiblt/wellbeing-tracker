@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { inject, onBeforeMount, onMounted, ref } from 'vue';
 import type ApiClient from '../services/api.service.ts';
+import { firstValueFrom } from 'rxjs';
 
 const apiClient = inject<ApiClient>('apiClient') as ApiClient;
-const apparitionSpeed = 0.03;
-
 interface CardItem {
   id: number;
   cardTitle: string;
@@ -37,41 +36,18 @@ onBeforeMount(() => {
   }, 2000);
 });
 
-onMounted(() => {
-  apiClient.getUserById().subscribe(res => {
-    console.log(res.data);
-  });
+onMounted(async () => {
+  await request();
 });
+
+async function request() {
+  const user = (await firstValueFrom(apiClient.getUserById())).data;
+  console.log(user);
+}
 </script>
 
-<template></template>
+<template>
+  <button type="button" @click="request">Authenticated request</button>
+</template>
 
-<style scoped lang="scss">
-.card-container {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-
-  .card {
-    animation-name: appear;
-    opacity: 0;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-
-    .card-text-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-  }
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-</style>
+<style scoped lang="scss"></style>

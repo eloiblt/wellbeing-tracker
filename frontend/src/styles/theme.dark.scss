@@ -16,6 +16,8 @@
 
   --modal-background: #{$overlay-white};
 
+  --drop-shadow: #{rgba(255, 255, 255, 0.1)};
+
   // fix vue-select variables for dark theme
   --vs-border-color: #{$white};
 }

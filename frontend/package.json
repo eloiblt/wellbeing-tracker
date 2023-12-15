@@ -1,5 +1,5 @@
 {
-  "name": "nrt-frontend",
+  "name": "frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,6 +16,7 @@
     "build-production": "vite build --mode production"
   },
   "dependencies": {
+    "@fontsource/roboto": "^5.0.8",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
