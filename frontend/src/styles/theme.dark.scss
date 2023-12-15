@@ -1,0 +1,21 @@
+@import './colors.scss';
+
+.dark {
+  --background-primary: #{$lighter-black};
+
+  --text-primary: #{$white};
+  --text-secondary: #{$black};
+  --text-tertiary: #{$white};
+
+  --primary-color: #{$darker-grey};
+
+  --card-shadow: #{$white};
+  --card-background: #{$darker-black};
+
+  --background-navbar: #{$darker-black};
+
+  --modal-background: #{$overlay-white};
+
+  // fix vue-select variables for dark theme
+  --vs-border-color: #{$white};
+}

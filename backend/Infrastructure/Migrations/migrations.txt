@@ -1,0 +1,2 @@
+﻿dotnet ef migrations add <name> -s  .\Days -p .\Infrastructure\
+dotnet ef database update -p .\Days\

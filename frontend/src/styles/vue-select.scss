@@ -1,0 +1,17 @@
+@import 'vue-select/dist/vue-select.css';
+
+.vs__dropdown-menu {
+  z-index: 1055;
+}
+
+.vs__search {
+  opacity: 1 !important;
+}
+
+.vs__open-indicator {
+  display: none;
+}
+
+.vs__dropdown-option {
+  padding-left: 10px;
+}

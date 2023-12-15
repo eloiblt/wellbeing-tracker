@@ -1,0 +1,35 @@
+#app,
+.app-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+
+  .app-scroll-container {
+    position: relative;
+    flex: 1;
+    background-color: var(--background-primary);
+
+    .app-scroll {
+      position: absolute;
+      inset: 0;
+      overflow-y: auto;
+      display: flex;
+      padding: 20px 30px;
+    }
+  }
+}
+
+html,
+body,
+.home-page {
+  height: 100%;
+  margin: 0;
+}
+
+* {
+  transition:
+    color 0.1s ease,
+    background-color 0.5s ease,
+    background 0.5s ease;
+}

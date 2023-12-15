@@ -1,0 +1,18 @@
+@import './colors.scss';
+
+.light {
+  --background-primary: #{$white};
+
+  --text-primary: #{$black};
+  --text-secondary: #{$black};
+  --text-tertiary: #{$white};
+
+  --primary-color: #{$green};
+
+  --card-shadow: #{$darker-grey};
+  --card-background: #{$white};
+
+  --background-navbar: #{$green};
+
+  --modal-background: #{$overlay-grey};
+}

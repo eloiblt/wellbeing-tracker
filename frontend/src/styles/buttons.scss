@@ -1,0 +1,38 @@
+@import './colors';
+
+button {
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  background-color: darken($lighter-grey, 10%);
+  color: var(--text-secondary);
+
+  &.small {
+    padding: 5px;
+  }
+
+  &.btn-primary {
+    background-color: $green;
+    color: $white;
+
+    &:hover {
+      background-color: darken($green, 10%);
+    }
+  }
+
+  &:hover {
+    background-color: darken($lighter-grey, 20%);
+  }
+
+  &.btn-no-style {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  &[type='button'] {
+    cursor: pointer;
+  }
+}
