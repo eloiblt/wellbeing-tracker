@@ -1,4 +1,4 @@
-﻿namespace Days.Configurations;
+﻿namespace API.Configurations;
 
 public static partial class Configuration
 {
@@ -7,10 +7,7 @@ public static partial class Configuration
         builder.Services.AddCors(options =>
         {
             options.AddDefaultPolicy(
-                policy  =>
-                {
-                    policy.AllowAnyHeader().WithOrigins(builder.Configuration["CorsOrigin"]!);
-                });
+                policy => { policy.AllowAnyHeader().WithOrigins(builder.Configuration["CorsOrigin"]!); });
         });
     }
 }

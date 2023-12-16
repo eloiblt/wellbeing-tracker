@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Days.Configurations;
+namespace API.Configurations;
 
 public static partial class Configuration
 {

@@ -41,7 +41,7 @@ onMounted(async () => {
 });
 
 async function request() {
-  const user = (await firstValueFrom(apiClient.getUserById())).data;
+  const user = (await firstValueFrom(apiClient.getCurrentUser())).data;
   console.log(user);
 }
 </script>

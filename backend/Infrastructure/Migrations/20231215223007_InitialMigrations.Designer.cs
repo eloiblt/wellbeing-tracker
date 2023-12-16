@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Infrastructure.Migrations
 {
-    [DbContext(typeof(DaysContext))]
+    [DbContext(typeof(AppContext))]
     [Migration("20231215223007_InitialMigrations")]
     partial class InitialMigrations
     {

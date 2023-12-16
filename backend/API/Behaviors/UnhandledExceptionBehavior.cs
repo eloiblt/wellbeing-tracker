@@ -1,12 +1,13 @@
 ﻿using MediatR;
 
-namespace Days.Behaviors;
+namespace API.Behaviors;
 
 public class UnhandledExceptionBehaviour<TRequest, TResponse>(ILogger<TRequest> logger)
     : IPipelineBehavior<TRequest, TResponse>
     where TRequest : notnull
 {
-    public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
+    public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next,
+        CancellationToken cancellationToken)
     {
         try
         {

@@ -42,7 +42,7 @@ function menuOpenToggle() {
     </div>
 
     <router-link to="/">
-      <img alt="" class="logo" src="../../assets/clock.png" />
+      <!--      <img alt="" class="logo" src="../../assets/clock.png" />-->
     </router-link>
 
     <router-link class="app-name-container" to="/">
@@ -76,13 +76,11 @@ function menuOpenToggle() {
   display: flex;
   align-items: center;
   padding: 12px 30px;
-  caret-color: transparent;
   filter: drop-shadow(0px 5px 5px var(--drop-shadow));
   z-index: 1;
 
   .menu-icon {
     position: relative;
-    padding-right: 20px;
     width: 30px;
     height: 30px;
 
@@ -105,7 +103,7 @@ function menuOpenToggle() {
     flex-direction: column;
 
     h1 {
-      margin-left: 20px;
+      margin-left: 5px;
       cursor: pointer;
       font-size: 18px;
       margin-right: 20px;

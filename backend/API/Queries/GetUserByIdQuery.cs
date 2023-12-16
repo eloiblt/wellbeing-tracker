@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using Infrastructure;
 using Infrastructure.Entities;
 using MediatR;
+using AppContext = Infrastructure.AppContext;
 
-namespace Days.Queries;
+namespace API.Queries;
 
 public class GetUserByIdQuery : IRequest<User>
 {
@@ -12,7 +12,7 @@ public class GetUserByIdQuery : IRequest<User>
 
 public class GetUserByIdQueryValidator : AbstractValidator<GetUserByIdQuery>
 {
-    public GetUserByIdQueryValidator(DaysContext context)
+    public GetUserByIdQueryValidator(AppContext context)
     {
         RuleFor(v => v.Id)
             .NotEmpty()
@@ -23,7 +23,7 @@ public class GetUserByIdQueryValidator : AbstractValidator<GetUserByIdQuery>
     }
 }
 
-public class GetUserByIdQueryHandler(DaysContext context) : IRequestHandler<GetUserByIdQuery, User>
+public class GetUserByIdQueryHandler(AppContext context) : IRequestHandler<GetUserByIdQuery, User>
 {
     public async Task<User> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
     {

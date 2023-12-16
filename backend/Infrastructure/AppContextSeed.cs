@@ -4,9 +4,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Infrastructure;
 
-public abstract class DaysContextSeed
+public abstract class AppContextSeed
 {
-    public static async Task SeedAsync(DaysContext context, ILogger logger, string? env = "Development")
+    public static async Task SeedAsync(AppContext context, ILogger logger, string? env = "Development")
     {
         try
         {
@@ -22,7 +22,7 @@ public abstract class DaysContextSeed
         }
     }
 
-    private static async Task SeedUsers(DaysContext context, ILogger logger)
+    private static async Task SeedUsers(AppContext context, ILogger logger)
     {
         if (await context.Users.AnyAsync()) return;
 
@@ -35,16 +35,16 @@ public abstract class DaysContextSeed
         await context.SaveChangesAsync();
         logger.LogInformation("Users seeded");
     }
-    
-    private static async Task SeedMetricsType(DaysContext context, ILogger logger)
+
+    private static async Task SeedMetricsType(AppContext context, ILogger logger)
     {
         if (await context.MetricTypes.AnyAsync()) return;
 
         var metricTypes = new List<MetricType>
         {
             new() { Name = "Since" },
-            new() { Name = "Until"  },
-            new() { Name = "Between"  }
+            new() { Name = "Until" },
+            new() { Name = "Between" }
         };
 
         await context.MetricTypes.AddRangeAsync(metricTypes);

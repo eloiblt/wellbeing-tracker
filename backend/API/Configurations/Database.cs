@@ -1,8 +1,8 @@
-﻿using Infrastructure;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Npgsql;
+using AppContext = Infrastructure.AppContext;
 
-namespace Days.Configurations;
+namespace API.Configurations;
 
 public static partial class Configuration
 {
@@ -14,17 +14,12 @@ public static partial class Configuration
         if (!connectionString.Contains("Password"))
         {
             if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DB_PASSWORD")))
-            {
                 connBuilder.Password = Environment.GetEnvironmentVariable("DB_PASSWORD");
-            }
 
-            if (string.IsNullOrEmpty(connBuilder.Password))
-            {
-                throw new Exception("Could not find a database password");
-            }
+            if (string.IsNullOrEmpty(connBuilder.Password)) throw new Exception("Could not find a database password");
         }
 
-        builder.Services.AddDbContext<DaysContext>(options =>
+        builder.Services.AddDbContext<AppContext>(options =>
         {
             options.UseNpgsql(connBuilder.ConnectionString);
 

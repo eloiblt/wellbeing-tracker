@@ -10,37 +10,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30ed01e4-3d30-4b9b-99ba-c52109a0de08" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Days/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Days/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Days/.idea/encodings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Days/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Days/.idea/projectSettingsUpdater.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Days/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Days/Configurations/Cors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Days/Configurations/Cors.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Days/Configurations/Database.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Days/Configurations/Database.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Days/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Days/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Days/Days.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Days/Days.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Days/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Days/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Days/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Days/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DaysContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DaysContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DaysContextSeed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DaysContextSeed.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Migrations/20231215162623_InitialMigration.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Migrations/20231215162623_InitialMigration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Migrations/DaysContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.gitlab-ci.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/shared/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/shared/Navbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/services/api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/styles/structure.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/styles/structure.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/styles/theme.dark.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/styles/theme.dark.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/styles/theme.light.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/styles/theme.light.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Days/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days.sln" beforeDir="false" afterPath="$PROJECT_DIR$/backend.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Behaviors/PerformanceBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Behaviors/PerformanceBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Behaviors/UnhandledExceptionBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Behaviors/UnhandledExceptionBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Behaviors/ValidationBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Behaviors/ValidationBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Behaviors/ValidationExceptionMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Behaviors/ValidationExceptionMiddleware.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Commands/LoginCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Commands/LoginCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Configurations/Authentification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Configurations/Authentification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Configurations/Cors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Configurations/Cors.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Configurations/Database.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Configurations/Database.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Configurations/Mediatr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Configurations/Mediatr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Configurations/Services.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Configurations/Services.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Days.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/API/API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/API/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/Queries/GetUserByIdQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Queries/GetUserByIdQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/appsettings.Production.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/appsettings.Production.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Days/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DaysContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/AppContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DaysContextSeed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/AppContextSeed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Migrations/20231215223007_InitialMigrations.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Migrations/20231215223007_InitialMigrations.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Migrations/DaysContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Migrations/DaysContextModelSnapshot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,33 +87,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Days: http.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/eq38347/Downloads/Days/backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Days: http.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/eq38347/Downloads/Days/backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\eloib\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\eloib\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\eloib\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\eloib\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\eloib\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\eloib\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Days: http">
     <configuration name="Days: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Days/Days.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/API/API.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
       <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -129,7 +128,7 @@
       </method>
     </configuration>
     <configuration name="Days: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Days/Days.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/API/API.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
       <option name="LAUNCH_PROFILE_NAME" value="http" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -144,7 +143,7 @@
       </method>
     </configuration>
     <configuration name="Days: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Days/Days.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/API/API.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
       <option name="LAUNCH_PROFILE_NAME" value="https" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -202,7 +201,9 @@
       <workItem from="1702671492391" duration="231000" />
       <workItem from="1702671742110" duration="39000" />
       <workItem from="1702671795823" duration="45000" />
-      <workItem from="1702671857748" duration="4081000" />
+      <workItem from="1702671857748" duration="4144000" />
+      <workItem from="1702742082809" duration="239000" />
+      <workItem from="1702742370644" duration="369000" />
     </task>
     <servers />
   </component>

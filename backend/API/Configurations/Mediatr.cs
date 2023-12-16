@@ -1,7 +1,7 @@
-﻿using Days.Behaviors;
+﻿using API.Behaviors;
 using FluentValidation;
 
-namespace Days.Configurations;
+namespace API.Configurations;
 
 public static partial class Configuration
 {
@@ -14,7 +14,7 @@ public static partial class Configuration
             cfg.AddOpenBehavior(typeof(UnhandledExceptionBehaviour<,>));
             cfg.AddOpenBehavior(typeof(PerformanceBehaviour<,>));
         });
-        
+
         builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
     }
 }

@@ -7,33 +7,33 @@ button {
   padding: 5px 15px;
   background-color: darken($lighter-grey, 10%);
   color: var(--text-secondary);
-  caret-color: transparent;
+  cursor: pointer;
 
   &.small {
     padding: 5px;
+  }
+
+  &:hover:not(:disabled):not(.btn-no-style) {
+    background-color: darken($lighter-grey, 20%);
   }
 
   &.btn-primary {
     background-color: $green;
     color: $white;
 
-    &:hover {
-      background-color: darken($green, 10%);
+    &:hover:not(:disabled) {
+      background-color: darken($green, 5%);
     }
-  }
-
-  &:hover {
-    background-color: darken($lighter-grey, 20%);
   }
 
   &.btn-no-style {
     border: none;
     background: none;
     padding: 0;
-    cursor: pointer;
   }
 
-  &[type='button'] {
-    cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
   }
 }

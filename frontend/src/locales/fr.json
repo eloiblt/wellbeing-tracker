@@ -1,3 +1,5 @@
 {
-  "app-title": "Days metrics"
+  "app-title": "Tracker de bien être",
+  "password": "Le mot de passe doit contenir au moins 12 caractères",
+  "email": "L'email est invalide"
 }

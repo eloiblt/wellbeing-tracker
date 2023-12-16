@@ -12,6 +12,9 @@ const props = defineProps({
     <router-link to="/">
       <h2>Home</h2>
     </router-link>
+    <router-link to="/journal">
+      <h2>Journal</h2>
+    </router-link>
     <router-link to="/metrics">
       <h2>Metrics</h2>
     </router-link>
@@ -33,7 +36,6 @@ const props = defineProps({
   flex-direction: column;
   padding: 20px 0;
   filter: drop-shadow(5px 0px 5px var(--drop-shadow));
-  caret-color: transparent;
 
   h2 {
     padding: 10px 20px;

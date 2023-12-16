@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace Days.Behaviors;
+namespace API.Behaviors;
 
 public class ValidationExceptionMiddleware(RequestDelegate next, ILogger<ValidationExceptionMiddleware> logger)
 {
@@ -22,22 +22,15 @@ public class ValidationExceptionMiddleware(RequestDelegate next, ILogger<Validat
                 Detail = "One or more validation errors has occurred"
             };
 
-            if (exception.Errors is not null)
-            {
-                problemDetails.Extensions["errors"] = exception.Errors;
-            }
+            if (exception.Errors is not null) problemDetails.Extensions["errors"] = exception.Errors;
 
-            logger.LogError( "{Error}", JsonConvert.SerializeObject(problemDetails));
-            
+            logger.LogError("{Error}", JsonConvert.SerializeObject(problemDetails));
+
             context.Response.StatusCode = StatusCodes.Status400BadRequest;
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")
-            {
                 await context.Response.WriteAsync("An error has occured");
-            }
             else
-            {
                 await context.Response.WriteAsJsonAsync(problemDetails);
-            }
         }
     }
 }

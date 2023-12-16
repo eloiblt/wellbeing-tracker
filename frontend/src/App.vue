@@ -25,7 +25,7 @@ onMounted(() => {
   });
 
   router.beforeEach(async to => {
-    if (!authService.logged && to.name !== 'Login') {
+    if (!authService.logged && to.name !== 'Login' && to.name !== 'Signup') {
       return { name: 'Login' };
     }
   });

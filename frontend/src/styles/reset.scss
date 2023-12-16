@@ -123,3 +123,12 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+
+* {
+  caret-color: transparent;
+}
+
+input,
+textarea {
+  caret-color: initial;
+}

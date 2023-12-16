@@ -1,3 +1,5 @@
 {
-  "app-title": "Calculateur de jours"
+  "app-title": "Well-being tracker",
+  "password": "The password must contain at least 12 characters",
+  "email": "Invalid email"
 }

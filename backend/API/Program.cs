@@ -1,7 +1,8 @@
 using System.Text.Json.Serialization;
-using Days.Behaviors;
-using Days.Configurations;
+using API.Behaviors;
+using API.Configurations;
 using Infrastructure;
+using AppContext = Infrastructure.AppContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,10 +27,10 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger(); 
+    app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Days V1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
         c.RoutePrefix = string.Empty;
     });
 }
@@ -45,11 +46,11 @@ app.UseAuthorization();
 using (var scope = app.Services.CreateScope())
 {
     var scopedProvider = scope.ServiceProvider;
-    var appContext = scopedProvider.GetRequiredService<DaysContext>();
+    var appContext = scopedProvider.GetRequiredService<AppContext>();
     try
     {
         app.Logger.LogInformation("Migrating Database...");
-        await DaysContextSeed.SeedAsync(appContext, app.Logger);
+        await AppContextSeed.SeedAsync(appContext, app.Logger);
     }
     catch (Exception ex)
     {

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import Home from './components/Home.vue';
 import Login from './components/Login.vue';
 import Metrics from './components/Metrics.vue';
+import Signup from './components/Signup.vue';
 
 export function routes() {
   const routes = [
@@ -14,6 +15,11 @@ export function routes() {
       path: '/login',
       name: 'Login',
       component: Login,
+    } satisfies RouteRecordRaw,
+    {
+      path: '/signup',
+      name: 'Signup',
+      component: Signup,
     } satisfies RouteRecordRaw,
     {
       path: '/metrics',
